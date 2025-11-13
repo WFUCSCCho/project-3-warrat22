@@ -106,13 +106,13 @@ Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
 
 Bubble Sort and Odd-Even Transposition Sort comparison (already sorted):
 
-![](Sorted_Comparisons.png)
+![](Sorted_NumComparisons.png)
 
 Bubble Sort and Odd-Even Transposition Sort comparison (shuffled):
-![](Shuffled_Comparisons.png)
+![](Shuffled_NumComparisons.png)
 
 Bubble Sort and Odd-Even Transposition Sort comparison (reversed):
-![](Reverse_Comparisons.png)
+![](Reverse_NumComparisons.png)
 
 
 ## Submission:

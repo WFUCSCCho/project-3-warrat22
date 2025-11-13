@@ -165,32 +165,35 @@ public class Proj3 {
         if (a == null || size <= 1) return 0;
 
         boolean swapped = true;
-        int comparisons = 0;
+        int phaseCount = 0;   // <-- parallel comparison count
 
-        // keep going until no swaps occur in a full pass
         while (swapped) {
             swapped = false;
 
-            // Odd phase
+            // ----- Odd phase -----
+            boolean phaseSwapped = false;
             for (int i = 1; i <= size - 2; i += 2) {
-                comparisons++; // count each comparison
                 if (a.get(i).compareTo(a.get(i + 1)) > 0) {
                     swap(a, i, i + 1);
-                    swapped = true;
+                    phaseSwapped = true;
                 }
             }
+            phaseCount++;   // <-- all odd comparisons counted as **1**
+            if (phaseSwapped) swapped = true;
 
-            // Even phase
+            // ----- Even phase -----
+            phaseSwapped = false;
             for (int i = 0; i <= size - 2; i += 2) {
-                comparisons++; // count each comparison
                 if (a.get(i).compareTo(a.get(i + 1)) > 0) {
                     swap(a, i, i + 1);
-                    swapped = true;
+                    phaseSwapped = true;
                 }
             }
+            phaseCount++;   // <-- all even comparisons counted as **1**
+            if (phaseSwapped) swapped = true;
         }
 
-        return comparisons;
+        return phaseCount;
     }
 
     public static void main(String [] args)  throws IOException {
